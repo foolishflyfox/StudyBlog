@@ -1,0 +1,21 @@
+<div id="app-4">
+    <ul>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos: [
+                {text: '学习 JavaScript'},
+                {text: '学习 Vue'},
+                {text: '学习牛项目'}
+            ]
+        }
+    })
+</script>
