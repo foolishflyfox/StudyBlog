@@ -284,4 +284,62 @@ while [ "$i" -lt 3 ]; do
 done
 ```
 
+## 函数
+
+- Java 版(Function.java)
+```java
+public class Function {
+    public static void main(String[] args) {
+        hello("fff");
+        Function function = new Function();
+        function.bar();
+    }
+    public static void hello(String name) {
+        System.out.println("hello, " + name);
+    }
+    public void bar() {
+        System.out.println("call bar");
+    }
+}
+```
+
+- C++ 版(Function.cpp)
+```cpp
+#include <iostream>
+using namespace std;
+
+void hello(const char* name);
+
+int main() {
+    hello("fff");
+}
+
+void hello(const char* name) {
+    cout << "hello, " << name << endl;
+}
+```
+
+- JavaScript 版(Function.js)
+```javascript
+hello("fff")
+
+function hello(name) {
+    console.log("hello, " + name)
+}
+```
+
+
+- Python 版(Function.py)
+```python
+def hello(name):
+    print("hello, " + name)
+
+hello("fff")
+```
+
+- Shell 版(Function.sh)
+```sh
+
+```
+
 
