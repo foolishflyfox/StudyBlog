@@ -38,3 +38,36 @@ module.exports = {
 }
 ```
 3. 在终端中运行 `npm run dev` 命令，启动 webpack 进行项目的打包构建
+
+4. webpack 中的默认约定
+    - 默认的打包入口文件为 src/index.js
+    - 默认的输出文件路径为 dist/main.js
+    - 可以在 webpack.config.js 中指定入口文件和输出文件
+```js
+const path = require("path")
+module.exports = {
+    mode: 'development',
+    entry: path.join(__dirname, "src", "index1.js"),
+    output: {
+        path: path.join(__dirname, "dist"),
+        filename: "bundle.js"
+    }
+}
+```
+
+### 实现修改源文件自动生成目标代码功能
+
+- 安装插件: `npm install webpack-dev-server -D`
+- 修改 package.json 中的命令: `"dev": "webpack serve"`
+
+
+### 总结
+
+webpack 插件的作用：
+- webpack-dev-server: 每当修改了源代码，webpack 会自动进行项目的打包和构建
+- html-webpack-plugin
+    - webpack 中的 HTML 插件，类似于一个模板引擎插件
+    - 可以通过此插件自定制 index.html 页面的内容
+
+
+## 通过 vue-cli
