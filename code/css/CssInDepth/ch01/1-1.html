@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 优先级次序: ID 选择器 > 类选择器 > 类型选择器 */
+        /* 类型选择器 */
+        h1 {
+            color: red;
+            background-color: antiquewhite;
+            margin-bottom: 10px;
+        }
+        /* ID 选择器 */
+        #page-title {
+            color: #2f4f4f
+        }
+        /* 类选择器 */
+        .title {
+            color: cyan
+        }
+
+        /* 尽量避免使用 ID 选择器 */
+        #main-nav {
+            margin-top: 10px;
+            list-style: none;
+            padding: 10px;
+            border-style: dashed;
+            
+        }
+        #main-nav li {
+            display: inline-block;
+        }
+        #main-nav a {
+            background-color: #13a4a4;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+        .featured {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="page-title" class="title" style="color: #00bfff">Wombat Coffee Roasters</h1>
+    <nav>
+        <ul id="main-nav" class="nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/coffees">Coffees</a></li>
+            <li><a href="/brewers">Brewers</a></li>
+            <li><a href="/specials" class="featured">specials</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

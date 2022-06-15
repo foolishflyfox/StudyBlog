@@ -23,7 +23,10 @@ module.exports = {
     module: {  // 所有第三方模块的匹配规则
         rules: [
             // 定义不同模块的 loader
-            {test: /\.css$/, use: ['style-loader', 'css-loader']}
+            {test: /\.css$/, use: ['style-loader', 'css-loader']},
+            {test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']},
+            {test: /\.jpg|png|gif$/, use: 'url-loader?limit=507'},
+            {test: /\.js$/, use: 'babel-loader', exclude: /node-modules/}
         ]
     }
 }
