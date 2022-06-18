@@ -1,10 +1,11 @@
 import $ from 'jquery'
 // 导入样式
-import './css/index.css'
-import './css/index.less'
+import '@/css/index.css'
+import '@/css/index.less'
+import '@/js/test/info'
 
 // 导入图片文件
-import logo from './images/note.png'
+import logo from '@/images/note.png'
 
 console.log(logo)
 // 给 img 标签的 src 动态赋值

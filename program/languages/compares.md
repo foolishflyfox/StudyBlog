@@ -339,7 +339,13 @@ hello("fff")
 
 - Shell 版(Function.sh)
 ```sh
+#!/bin/bash
 
+function hello() {
+    echo "hello, $1"
+}
+
+hello "fff"
 ```
 
 

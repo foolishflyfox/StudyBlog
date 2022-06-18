@@ -1,7 +1,8 @@
 **/.DS_Store
+**/dist
 **/*.class
 **/*.o
 **/a.out
 **/node_modules
-**/dist
+code/webpack/**/dist
 
