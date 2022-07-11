@@ -176,3 +176,47 @@ $ systemctl enable kubelet
 ```
 
 ### 集群安装
+
+```
+# 在安装 kubernetes 集群之前，必须要提前准备好需要的镜像，所需镜像就可以通过下面的命令查看
+$ kubeadm config images list
+I0710 15:15:37.239870    8159 version.go:251] remote version is much newer: v1.24.2; falling back to: stable-1.17
+W0710 15:15:38.618518    8159 validation.go:28] Cannot validate kube-proxy config - no validator is available
+W0710 15:15:38.618533    8159 validation.go:28] Cannot validate kubelet config - no validator is available
+k8s.gcr.io/kube-apiserver:v1.17.17
+k8s.gcr.io/kube-controller-manager:v1.17.17
+k8s.gcr.io/kube-scheduler:v1.17.17
+k8s.gcr.io/kube-proxy:v1.17.17
+k8s.gcr.io/pause:3.1
+k8s.gcr.io/etcd:3.4.3-0
+k8s.gcr.io/coredns:1.6.5
+# 下载镜像
+$ images=(
+    kube-apiserver:v1.17.4
+    kube-controller-manager:v1.17.4
+    kube-scheduler:v1.17.4
+    kube-proxy:v1.17.4
+    pause:3.1
+    etcd:3.4.3-0
+    coredns:1.6.5
+)
+```
+创建如下脚本：
+```shell
+images=(
+    kube-apiserver:v1.17.4
+    kube-controller-manager:v1.17.4
+    kube-scheduler:v1.17.4
+    kube-proxy:v1.17.4
+    pause:3.1
+    etcd:3.4.3-0
+    coredns:1.6.5
+)
+for imageName in ${images[@]} ; do
+    echo $imageName
+done
+```
+
+
+下面开始对集群进行初始化，并将 node 节点加入到集群中。下面的操作只需要在 master 节点上执行即可。
+
